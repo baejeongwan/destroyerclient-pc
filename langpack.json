@@ -1,0 +1,28 @@
+{
+    "en": {
+        "translation": {
+            "i18InitOK": "i18next initialization had succeed.",
+            "appName": "Destroyer Client",
+            "accessWebsite": "Access Website",
+            "accessChat": "Access Chat",
+            "updaterFailureTitle": "Updater: Error",
+            "updaterFailureMessage": "An error happened while working on update: ",
+            "updateAvailable": "Update is available.",
+            "updaterInstallNow": "Install now",
+            "cancel": "Cancel"
+        }
+    },
+    "ko": {
+        "translation": {
+            "i18InitOK": "i18next 초기화가 성공하였습니다.",
+            "appName": "파괴자 모둠 클라이언트",
+            "accessWebsite": "파괴자 모둠 웹사이트 접속",
+            "accessChat": "채팅 접속",
+            "updaterFailureTitle": "업데이터: 오류",
+            "updaterFailureMessage": "업데이트 확인중 오류가 발생하였습니다: ",
+            "updateAvailable": "업데이트가 가능합니다.",
+            "updaterInstallNow": "지금 설치",
+            "cancel": "취소"
+        }
+    }
+}
