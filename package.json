@@ -1,6 +1,6 @@
 {
   "name": "destroyerclient-pc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Destroyer Client For PC",
   "main": "main.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^5.2.0",
     "electron-log": "^4.4.8",
+    "electron-progressbar": "^2.0.1",
     "electron-updater": "^5.2.1",
     "i18next": "^21.9.1"
   },
@@ -30,10 +31,12 @@
     "nsis": {
       "oneClick": false
     },
-    "publish": [{
-      "provider": "github",
-      "owner": "baejeongwan",
-      "repo": "destroyerclient-pc"
-    }]
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "baejeongwan",
+        "repo": "destroyerclient-pc"
+      }
+    ]
   }
 }

@@ -9,6 +9,12 @@
             "updaterFailureMessage": "An error happened while working on update: ",
             "updateAvailable": "Update is available.",
             "updaterInstallNow": "Install now",
+            "updaterDownloading": "Downloading update...",
+            "updaterDownloaded": "Update downloaded!",
+            "updaterRestartRequired": "In order to install update, restart is required. Restart Now?",
+            "restart": "Restart",
+            "later": "Later",
+            "pleaseWait": "Please wait",
             "cancel": "Cancel"
         }
     },
@@ -22,6 +28,12 @@
             "updaterFailureMessage": "업데이트 확인중 오류가 발생하였습니다: ",
             "updateAvailable": "업데이트가 가능합니다.",
             "updaterInstallNow": "지금 설치",
+            "updaterDownloading": "업데이트 다운로드중...",
+            "updaterDownloaded": "업데이트 다운로드됨!",
+            "updaterRestartRequired": "업데이트를 설치하기위해 재시작이 필요합니다. 재시작 하시겠습니까?",
+            "restart": "재시작",
+            "later": "나중에",
+            "pleaseWait": "잠시만 기다려주세요",
             "cancel": "취소"
         }
     }

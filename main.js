@@ -1,11 +1,13 @@
-const { app, BrowserWindow, ipcMain, autoUpdater, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const i18next = require('i18next');
 const fs = require('fs');
 const log = require('electron-log');
-const updater = require('electron-updater');
+const { autoUpdater } = require('electron-updater');
+const ProgressBar = require('electron-progressbar');
 
 let win;
+let updateProgressBar;
 
 const createWindow = () => {
     win = new BrowserWindow({
@@ -52,11 +54,28 @@ autoUpdater.on('update-not-available', () => {
 })
 
 autoUpdater.on('error', (err) => {
+    console.log(err);
     dialog.showErrorBox(i18next.t("updaterFailureTitle"), i18next.t("updaterFailureMessage") + err);
 })
 
 autoUpdater.on('update-available', () => {
-    let dialogBtn = dialog.showMessageBoxSync(win, {type: "question", "buttons": [i18next.t("updaterInstallNow"), i18next.t("cancel")], defaultId: 0, title: i18next.t("updateAvailable"), message: i18next.t("updateAvailable")})
+    let dialogBtn = dialog.showMessageBoxSync(win, {type: "question", buttons: [i18next.t("updaterInstallNow"), i18next.t("cancel")], defaultId: 0, title: i18next.t("updateAvailable"), message: i18next.t("updateAvailable")})
+    if (dialogBtn == 0) {
+        updateProgressBar = new ProgressBar({
+            indeterminate: false,
+            text: i18next.t("updaterDownloading"),
+            detail: i18next.t("pleaseWait")
+        })
+        autoUpdater.downloadUpdate();
+    }
+})
+
+autoUpdater.on('download-progress', (prgrs) => {
+    updateProgressBar.value = prgrs.percent;
+})
+
+autoUpdater.on('update-downloaded', () => {
+    let dialogBtn = dialog.showMessageBoxSync(win, {type: "question", buttons: [i18next.t("restart"), i18next.t("later")], defaultId: 0, title: i18next.t("updaterDownloaded"), message: i18next.t("updaterRestartRequired")})
     if (dialogBtn == 0) {
         autoUpdater.quitAndInstall();
     }
