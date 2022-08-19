@@ -1,11 +1,12 @@
 {
-  "name": "destroyerclilent-pc",
+  "name": "destroyerclient-pc",
   "version": "1.0.0",
   "description": "Destroyer Client For PC",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "release": "electron-builder"
   },
   "author": "Jayden",
   "license": "ISC",
@@ -20,16 +21,16 @@
     "i18next": "^21.9.1"
   },
   "build": {
-    "productName": "PC용 파괴자 모둠 클라이언트 / The Destroyers Client",
+    "productName": "PC용 파괴자 모둠 클라이언트",
     "copyright": "ISC license",
     "win": {
       "target": "nsis",
-      "icon": "./logo.ico"
-    },
-    "publish": [{
-      "provider": "github",
-      "repo": "destroyerclilent-pc",
-      "owner": "baejeongwan"
-    }]
+      "artifactName": "installer.${ext}",
+      "publish": [{
+        "provider": "github",
+        "owner": "baejeongwan",
+        "repo": "destroyerclient-pc"
+      }]
+    }
   }
 }

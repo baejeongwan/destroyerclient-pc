@@ -31,7 +31,7 @@ app.on('window-all-closed', () => {
 i18next.init({
     lng: "en",
     debug: true,
-    resources: JSON.parse(fs.readFileSync('./langpack.json', {encoding: 'utf-8'}))
+    resources: JSON.parse(fs.readFileSync(path.join(__dirname, "langpack.json"), {encoding: 'utf-8'}))
 }, function (err, t) {
     log.info(i18next.t("i18InitOK"))
 })
