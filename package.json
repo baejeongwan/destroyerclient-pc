@@ -25,12 +25,15 @@
     "copyright": "ISC license",
     "win": {
       "target": "nsis",
-      "artifactName": "installer.${ext}",
-      "publish": [{
-        "provider": "github",
-        "owner": "baejeongwan",
-        "repo": "destroyerclient-pc"
-      }]
-    }
+      "artifactName": "installer.${ext}"
+    },
+    "nsis": {
+      "oneClick": false
+    },
+    "publish": [{
+      "provider": "github",
+      "owner": "baejeongwan",
+      "repo": "destroyerclient-pc"
+    }]
   }
 }
