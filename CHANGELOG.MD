@@ -6,3 +6,5 @@ Download release at [Here](https://github.com/baejeongwan/destroyerclient-pc)
 Initial commit
 ### 1.0.1
 Electron Updater Test
+### 1.0.2
+Improve updater
